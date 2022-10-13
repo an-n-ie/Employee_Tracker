@@ -1,16 +1,14 @@
-# Website_Title
+# Employee Tracker
 
 ## Description
 
-Description
+A command-line application to manage a company's employee database, using Node.js, Inquirer, and MySQL.
 
 ## Usage
 
 The following image shows the application's appearance and functionality:
 
-![Picture](./Assets/Weather-Dashboard.png)
-
-Website: 
+![tracker](./Assets/12-sql-homework-demo-01.png)
 
 ## Credits
 
@@ -18,7 +16,7 @@ Website:
 
 ## Contact
 
-GitHub: https://github.com/an-n-ie
+GitHub: https://github.com/an-n-ie/Employee_Tracker 
 
 Email: anniehoang.anh@gmail.com
 # Employee_Tracker
