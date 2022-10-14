@@ -1,10 +1,12 @@
 USE employee_db;
+select * from department;
+select * from role;
 
 SELECT employee.id, 
 employee.first_name, 
 employee.last_name,
 role.title,
-department.name,
+department.name as department,
 role.salary,
 CONCAT(mgr.first_name, " ", mgr.last_name) as manager
 FROM employee
