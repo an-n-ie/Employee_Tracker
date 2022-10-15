@@ -1,52 +1,42 @@
-const inquirer = require("inquirer")
+const inquirer=require("inquirer")
 const db = require("./config/connection")
 
 require("console.table")
 
-db.connect(() => {
+db.connect( ()=>{
     menu()
 })
 
-const menuQuestion = [
+const menuQuestion=[
     {
-        type: "list",
-        name: "menu",
-        message: "What would you like to do?",
-        choices: ["View all departments", "View all roles", "View all employees", "Add a department", "Add a role", "Add an employee", "Update an employee role"]
+        type:"list",
+        name:"menu",
+        message:"choose the following option:",
+        choices:["view all departments","view all roles","view all employees","add a department","add a role","add an employee","update an employee role"]
     }
 ]
 
-const addDEmployee = [
-    {
-        type:"input",
-        name:"first_name",
-        message:"What is the employee's first name?"
-    },
-    {
-        type:"input",
-        name:"last_name",
-        message:"What is the employee's last name?"
-    },
-]
+
+
+
 
 function menu(){
-    inquirer.prompt(menuQuestion)
-    .then(response=>{
-      if(response.menu==="view all employees"){
-          viewEmployees()
-      }
-      else if(response.menu==="view all departments"){
-          viewDepartments()
-      }
-      else if(response.menu==="add an employee"){
-          addEmployees()
-      }
-  
-    })
-      
-  }
+  inquirer.prompt(menuQuestion)
+  .then(response=>{
+    if(response.menu==="view all employees"){
+        viewEmployees()
+    }
+    else if(response.menu==="view all departments"){
+        viewDepartments()
+    }
+    else if(response.menu==="add an employee"){
+        addEmployees()
+    }
 
-  function viewDepartments(){
+  })
+    
+}
+function viewDepartments(){
     db.query("select* from department", (err, data)=>{
         console.table(data)
         menu()
